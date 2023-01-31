@@ -1,2 +1,2 @@
 # projetos-js-
-projetos html, css e java script. 
+projetos java script. Html e css já feito. 
