@@ -4,13 +4,14 @@ const cor = document.querySelector(".color") // ponto = classe
  
 botao.addEventListener('click', function change () { 
     
+    
     const CorAle = pegarnumale() 
     console.log(CorAle)
     document.body.style.backgroundColor= colors[CorAle]
     cor.textContent = colors[CorAle]
 
    // agora, eu quero escolher um número aleatório para mudar a cor //
-   // para isso,é necessário uma função que gera números aleatórios//
+   // para isso, é necessário uma função que gera números aleatórios//
    
    
    
@@ -18,5 +19,6 @@ botao.addEventListener('click', function change () {
 
 
 function pegarnumale() {
-    return Math.floor(Math.random() * colors.length)
+    return Math.floor(Math.random() * colors.length)   
+
 }
