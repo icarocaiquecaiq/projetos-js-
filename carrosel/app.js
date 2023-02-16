@@ -37,3 +37,97 @@ const reviews = [
       "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
   },
 ];
+
+// registrar e pegar elementos 
+
+var tras= document.querySelector(".prev-btn")
+var frente = document.querySelector(".next-btn")
+var ale = document.querySelector("#aleatorio")
+
+const image = document.getElementById("person-img")
+const author = document.getElementById("author")
+const job = document.getElementById("job")
+const info = document.getElementById("info") 
+
+
+// carregar itens iniciais 
+
+
+let atual = 1 
+
+
+
+window.addEventListener('DOMContentLoaded',()=>{
+  
+  showperson(atual)
+
+
+
+})
+
+// mostrar pessoa baseada no item
+
+function showperson(person) {
+const item = reviews[person]
+image.src = item.img
+author.textContent = item.name
+job.textContent = item.job
+info.textContent = item.text
+
+}
+  
+// seletor de pessoas 
+
+frente.addEventListener("click",()=>{
+  atual++
+  if (atual > reviews.length-1) {
+    atual = 0 
+  }
+  showperson(atual)
+ 
+})  
+
+tras.addEventListener("click",()=>{
+ atual --
+ if (atual === -1 ) {
+  atual = reviews.length -1
+ }
+  showperson(atual) 
+})
+
+// botao aleatorio
+
+function pegarBotaoAle() {
+  
+  return Math.floor(Math.random() * (reviews.length  ))   
+  
+}
+
+console.log(ale)
+
+console.log(frente)
+
+ale.addEventListener("click",()=>{
+
+ console.log(showperson(pegarBotaoAle()))
+ console.log(pegarBotaoAle())
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
