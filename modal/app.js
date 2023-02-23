@@ -13,7 +13,7 @@ console.log(aparecer)
 console.log(desaparecer)
 
 mostrar.addEventListener("click",()=>{
-    console.log(aparecer.classList.add("open-modal","modal-overlay"))
+    console.log(aparecer.classList.add("open-modal"))
 
     
 
