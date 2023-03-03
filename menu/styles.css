@@ -262,3 +262,15 @@ Menu
     height: 150px;
   }
 }
+.btn-mostrar:hover{
+
+  color: aqua;
+  background-color: var(--clr-grey-1)
+
+}
+.btn-ingre p{
+  
+    display: none;  
+    
+ 
+}

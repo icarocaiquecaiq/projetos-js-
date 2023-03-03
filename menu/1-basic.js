@@ -6,6 +6,7 @@ const menu = [
     price: 15.99,
     img: "./images/item-1.jpeg",
     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    ing:"eggs,flower,milk,baking powder,fruits,syrup",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const menu = [
     price: 13.99,
     img: "./images/item-2.jpeg",
     desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+    ing:"meat,bread,cheese,fries,bacon",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const menu = [
     price: 6.99,
     img: "./images/item-3.jpeg",
     desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+    ing:"milk,ice cream,donuts,cream",
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const menu = [
     price: 20.99,
     img: "./images/item-4.jpeg",
     desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
+    ing:"eggs,bread,cheese,beans",
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const menu = [
     price: 22.99,
     img: "./images/item-5.jpeg",
     desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
+    ing:"bread,meat,egg.,salad",
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const menu = [
     price: 18.99,
     img: "./images/item-6.jpeg",
     desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+    ing:"chocolate,milk,strawberry,ice cream",
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ const menu = [
     price: 8.99,
     img: "./images/item-7.jpeg",
     desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
+    ing:"bacon,cheese,tomato,salad",
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ const menu = [
     price: 12.99,
     img: "./images/item-8.jpeg",
     desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+    ing:"fries,cheese,tomato,bread,meat",
   },
   {
     id: 9,
@@ -70,6 +78,7 @@ const menu = [
     price: 16.99,
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    ing:"strawberry ice cream,milk",
     
   },
   {
@@ -78,8 +87,8 @@ const menu = [
     category: "steak",
     price: 200.00,
     img: "./images/item-10.jpeg",
-    desc: `carne cara e boa, venha hoje e aproveite a oferta .`
-    
+    desc: `carne cara e boa, venha hoje e aproveite a oferta .`,
+    ing:"meat,sause,vegetables,tomato"
     
   }
 ];
@@ -92,9 +101,15 @@ const espaçoBtn = document.querySelector(".btn-container")
 // carregar itens 
 window.addEventListener("DOMContentLoaded",function () {
   
+  
+
   displayMenuItens(menu)
   displayMenubtns()
+  mostrarIngredientes()
 
+
+  
+  
 
 })
 
@@ -113,6 +128,10 @@ function displayMenuItens(menuItens) {
         <h4 class="price">${item.price}</h4>
       </header>  
       <p class=>${item.desc}</p>
+    </div>
+    <div class=btn-ingre>
+      <button type = "button" class = "btn-mostrar"> ingredientes </button>
+      <p> ${item.ing} </p>
     </div>
   </article>`}) 
 
@@ -163,30 +182,32 @@ botoes.forEach(function (btn) {
 }
 
 
+function mostrarIngredientes(){
+ 
+  
 
+  const botoes = document.querySelectorAll(".btn-mostrar")
+ 
 
+  botoes.forEach((btn)=>{
+    
+    btn.addEventListener("click",function (e) {
+      
+      const elevar = (e.currentTarget.parentElement)
+      
+      elevar.classList.toggle("btn-ingre")
+    })
 
+  })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+ 
+}
 
 
 /*const notas = [7, 8, 8, 7]
-const sum = notas.reduce((p,c)=>{
+const sum = notas.reduce((p,c)=>
   console.log(`previous: ${p}`);
   console.log(`current: ${c}`);
   return p+c

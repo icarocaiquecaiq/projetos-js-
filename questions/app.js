@@ -42,10 +42,8 @@ const questions = document.querySelectorAll(".question-btn")
         btn.addEventListener("click",function (e) {
             const mostrar = (e.currentTarget.parentElement.parentElement)
             
-           
-
-            mostrar.classList.toggle("show-text")
-
+            mostrar.classList.toggle("btn-ingre")
+            
             
         })
         
