@@ -29,10 +29,11 @@ form.addEventListener("submit",(e)=>{
   }else{
     // seletor que vai até um certo nível da array ee gera strings concatenadas
     let tempText = text.slice(0,value)
-    // desconcatenação de strings, para isso, foi adicionado html dinâmico. 
-    result.innerHTML = tempText.join(`<br>
-    <br>
-    <br>`)
+    tempText = tempText.map((paragrafos)=>{
+      return `<p class = "result">${paragrafos}</p>`
+    })
+    .join("")
+    result.innerHTML = tempText  
   }
  
 })
