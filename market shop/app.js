@@ -90,7 +90,7 @@ function cleanItens(){
         grocery.value = editElement.innerHTML
         editFlag = true
         editID = espeItem.dataset.id
-        submitBtn.textContent = "edit"
+        submitBtn.textContent = "editar"
     }
 //display alert e remover em segundos 
 function displayAlert(mensagem,tipo){
@@ -196,3 +196,17 @@ function createListItem(id,value){
     // apenchild
     list.appendChild(element)
 }
+/* timer */
+
+const timer = document.querySelector(".time")
+let horas = new Date().getHours()
+let minutos = new Date().getMinutes()
+const segundos = new Date().getSeconds()
+
+
+const contador = setInterval(()=>{
+    timer.textContent = 
+    new Date().getHours()+":"+new Date().getMinutes()+":"+new Date().getSeconds()
+},1000)
+
+
